@@ -1,13 +1,20 @@
 package conexion;
 
+import modelo.entity.Usuario;
+import modelo.repository.UsuarioRepository;
+
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public class TestConnect {
     public static void main(String[] args) {
-        configPostgresDB();
-//        configMysqlDB();
-        Connection conn = ConexionBD.getInstance().getConnection();
-
+//        configPostgresDB();
+        configMysqlDB();
+        UsuarioRepository usuarioRepository = new UsuarioRepository();
+        ArrayList<Usuario> listaUsuarios = usuarioRepository.obtenerUsuarios();
+        for(Usuario u : listaUsuarios){
+            System.out.println(u.toString());
+        }
     }
 
     private static void configPostgresDB(){
