@@ -11,8 +11,7 @@ public class Usuario {
 
     }
 
-    public Usuario(Integer idUsuario, String nombres, String apellidos, Integer ci, Integer nroCelular) {
-        this.idUsuario = idUsuario;
+    public Usuario(String nombres, String apellidos, Integer ci, Integer nroCelular) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.ci = ci;
